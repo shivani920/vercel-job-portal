@@ -1,0 +1,59 @@
+<!-- src/views/job-form-step3.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Job Dashboard</title>
+        <link rel="stylesheet" href="/style.css" />
+        <style>
+            
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        width: 40rem;
+        height: 30rem;
+        margin-top: 100px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-body {
+        margin-top: 200px;
+        text-align: center;
+      }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <% if (submitted) { %>
+                    <!-- Thank You Message -->
+                    <h2>Thank You!</h2>
+                    <p>Your job details have been submitted successfully.</p>
+                    <% } else { %>
+                    <!-- Form Content -->
+                    <h5 class="card-title"><h2>Create a Job</h2></h5>
+                    <!-- ... Your existing form content ... -->
+                    <form action="/job-form/step3" method="POST">
+                        <!-- ... Your form fields ... -->
+                        <button id="btn" class="submit">Submit</button>
+                    </form>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
